@@ -35,11 +35,7 @@
 
                   <div id="spinner"></div>
 
-                  <div id="message">
-                    <div class="alert alert-primary alert-dismissible"  >
-                        <strong>Login Successfully!</strong> 
-                      </div>
-                  </div>
+                 
 
                   <input type="hidden" class="form-control form-control-lg" id="platform" name="platform" value="web">
                   <div class="form-group">
@@ -144,23 +140,27 @@
 
                                 window.location.href = "merchant/dashboard.html";
                                 
-                              }else{
-                                
-                                window.location.href = "error-404.html";
+                              }else if(data.role == 'Customer'){
 
+                                Toastify({
+                                          text: "Please use the mobile app for this account",
+                                          className: "info",
+                                          style: {
+                                            background: "linear-gradient(to right, #12bb13, #e32c26)",
+                                          }
+                                        }).showToast();
                               }
-
-
                                 
                             }else{
-                                toast.error(resp.message , {position: toast.POSITION.TOP_RIGHT});
-                            }  
 
-                              elementEmail.disabled = false;
-                              elementPassword.disabled = false;
-                              showMessage() 
-                              elementEmail.value = ""
-                              elementPassword.value = ""
+                              Toastify({
+                                          text: data.message,
+                                          className: "info",
+                                          style: {
+                                            background: "linear-gradient(to right, #12bb13, #e32c26)",
+                                          }
+                                        }).showToast();
+                            } 
                           })
             
             .catch(error=> console.log(error))
