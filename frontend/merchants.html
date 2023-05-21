@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Swish | Anywhere, Anytime</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+   <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <style>
+        .button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        
+        .button1 {
+            border-radius: 2px;
+        }
+        
+        .button2 {
+            border-radius: 4px;
+        }
+        
+        .button3 {
+            border-radius: 8px;
+        }
+        
+        .button4 {
+            border-radius: 12px;
+        }
+        
+        .button5 {
+            border-radius: 50%;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+		
+            // Add minus icon for collapse element which is open by default
+            $(".collapse.show").each(function() {
+                $(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
+            });
+
+            // Toggle plus minus icon on show hide of collapse element
+            $(".collapse").on('show.bs.collapse', function() {
+                $(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
+            }).on('hide.bs.collapse', function() {
+                $(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
+            });
+        });
+    </script>
+
+</head>
+
+
+<body>
+
+    <!--==========================
+  Header
+  ============================-->
+    <header id="header" class="fixed-top">
+        <div class="container">
+
+            <div class="logo float-left">
+               
+                <a href="index.html" class="scrollto"><img src="img/SwishLogoScreen.png" alt="" class="img-fluid"></a>
+            </div>
+
+            <nav class="main-nav float-right d-none d-lg-block">
+                <ul>
+                    <li><a href="merchants.html">Merchant</a></li>
+                    <li><a href="consumer.html">Customer</a></li>
+                    <li><a href="about.html">About</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Offers and Rewards
+                        </a>
+                        <div class=" dropdown-content">
+                            <a class="dropdown-item" href="offers.html">Offers</a>
+                            <a class="dropdown-item" href="promotions.html">Rewards</a>
+                        </div>
+                    </li>
+
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="signup.html" style="text-decoration:none; color: white; width: 150px;" class="css-button-rounded" >Sign Up</a></li>
+                </ul>
+            </nav>
+            <!-- .main-nav -->
+        </div>
+    </header>
+    <!-- #header -->
+
+    <!--==========================
+    Intro Section
+  ============================-->
+    <section id="intro" class="clearfix">
+        <div class="container">
+
+            <div class="intro-img">
+			
+				
+                
+				<div class="card">
+                    <div class="card-header text-center">
+                        <h5 class="title">Merchant Registration</h5>
+                        <div id="sendmessage">Your message has been sent. Thank you!</div>
+                        <div id="errormessage"></div>
+                    </div>
+                    
+
+
+                    <img class="card-img" src="img/backgroundless.png" alt="Bologna">
+                    <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
+					
+                        <form style="margin-top:50px" id="form2">
+
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupPrepend"><i aria-hidden="true" class="fa fa-building-o"></i></span>
+                                    </div>
+                                    <input type="text" name="organization" id="organization" class="form-control" placeholder="Name of Organization" required>
+                                </div>
+                            </div>
+							
+							    <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupPrepend"><i aria-hidden="true" class="fa fa-user"></i></span>
+                                    </div>
+                                    <input type="text" name="contactP" id="contactP" class="form-control" placeholder="Contact Person" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupPrepend"><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                                    </div>
+                                    <input type="email" name="emailadd" id="emailadd" class="form-control" placeholder="Email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+
+                                        <span class="input-group-text" id="inputGroupPrepend">
+                                            <span class="country-code">+260</span>
+
+                                        </span>
+                                    </div>
+                                    <input type="number" name="Mobilenum" id="Mobilenum" class="form-control" placeholder="Mobile Number" required>
+                                </div>
+                            </div>
+
+                            <div class="text-center pt-4 pb-2">
+                                <button type="submit" class="btn btn-primary btn-block button4">Sign up your business</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+		
+			
+			<div class="intro-info">
+                <h2>Swish Merchants</h2> <br>
+                <h5>Get linked to your customers through the swish rewards and loyalty program.</h5>
+                
+            </div>
+        </div>
+
+        <div class="intro-info">
+            <h2>&nbsp;</h2> <br>
+            <h5>&nbsp;</h5>
+            <div>
+                
+            </div>
+        </div>
+
+        </div>
+    </section>
+    <!-- #intro -->
+
+    <main id="main">
+
+        <!--==========================
+      About Us Section
+    ============================-->
+        <section id="about">
+            <div class="container">
+
+                <header class="section-header">
+                    <h3>How to become a Swish Merchant</h3>
+                    <p> Swish is a mobile payment processing service that allow customer or subscribers to pay for goods and services easily and conveniently using a mobile phone.</p>
+                </header>
+
+                <div class="row about-container">
+
+                    <div class="col-lg-6 content order-lg-1 order-2">
+                        <p>
+                            <h5 class="title">GET STARTED</h5>
+                        </p>
+
+                        <div class="text-element content-element circles-list">
+                            <ol>
+                                <li>Register As a Merchant</li>
+                                <li><span style="font-weight: 500">Submit Paper Work </span></li>
+                                
+                                <li>Start Transacting</li>
+
+                            </ol>
+                        </div>
+                    </div>
+					
+					<div class="col-lg-6 content order-lg-1 order-2">
+                        <p>
+                            <h5 class="title">BENEFITS</h5>
+                        </p>
+
+                                                <div class="bs-example" style="width:100%">
+                            <div class="accordion" id="accordionExample" style="width:100%">
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h2 class="mb-0">
+                                            <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"><i class="fa fa-plus"></i> Customer loyalty </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p>. <a href="http://www.swish.co.zm" target="_blank">Learn more.</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h2 class="mb-0">
+                                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"><i class="fa fa-plus"></i> Sell More… </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p>. <a href="http://www.swish.co.zm" target="_blank">Learn more.</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h2 class="mb-0">
+                                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"><i class="fa fa-plus"></i> Get more Customers… </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p>. <a href="http://www.swish.co.zm" target="_blank">Learn more.</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header" id="headingFour">
+                                        <h2 class="mb-0">
+                                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour"><i class="fa fa-plus"></i> Customer interaction </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p>. <a href="http://www.swish.co.zm" target="_blank">Learn more.</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+
+
+        </section>
+        <!-- #about -->
+
+    </main>
+   <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>MERCHANTS</h4>
+                        <ul>
+                            <li><a href="merchants.html">Registration</li>
+                                <li><a href="http://41.72.107.169:8080/merchantportalnetone/">Merchant Portal</a></li>
+
+                            <li><a href="#">Recieve Payments</a></li>
+                            <li><a href="merchants.html">Help</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>CUSTOMERS</h4>
+                        <ul>
+                            <li><a href="consumer.html">Make Payments</li>
+                              
+                                <li><a href="consumer.html">Help</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            12553 Zambezi Road<br>Roma, Lusaka Zambia <br>
+                            <strong>Phone :</strong> +260-211-372600<br>
+							<strong>Support :</strong> 767<br>
+                            <strong>Email :</strong> contactus@swish.co.zm<br>
+                        </p>
+                    </div>
+					
+					<div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Social Networks</h4>
+                        <div class="social-links">
+                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+							<a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                        </div>
+
+                    </div>
+
+                    
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">       
+				 &copy; Copyright 2019 NetOne Payment Systems Ltd – All Rights Reserved
+            </div>
+
+        </div>
+    </footer>
+    <!-- #footer -->
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- Uncomment below i you want to use a preloader -->
+    <!-- <div id="preloader"></div> -->
+
+    <!-- JavaScript Libraries -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery/jquery-migrate.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/mobile-nav/mobile-nav.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="contactform/contactform.js"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+    $("#sendmessage").hide()
+        $("#form2").submit(function () {
+            var jqxhr = $.post('https://android.swish.co.zm/swish/v1/api/PostMerchantSend', $('#form2').serialize())
+                .success(function () {
+                    $("#sendmessage").show()
+
+                    $("#organization").val('');
+                    $("#contactP").val(''); 
+                    $("#emailadd").val(''); 
+                    $("#Mobilenum").val(''); 
+                   
+                })
+                .error(function () {
+                   
+                    document.getElementById("errormessage").innerHTML="An Error happened Please Try again later";
+                    $("#errormessage").show();
+                });
+            return false;
+        });
+    });
+    </script>
+
+</body>
+</html>
