@@ -208,7 +208,7 @@
            <!-- Multi step form -->
             <div class="row">
               <div class="col-md-12 col-md-offset-3">
-                  <form id="msform">
+                  <form id="msform" class="add_kyc_form">
                       <!-- progressbar -->
                       <ul id="progressbar">
                           <li class="active">Contact Personal Details</li>
@@ -344,8 +344,8 @@
                             <li><p>By email: info@payments.mosesjasi.biz</p></li>
                             <li><p>By phone number: +260974072829</p></li>
                           </ul>
-                          <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                          <input type="submit" name="submit" class="submit action-button" value="Agree & Submit"/>
+                          <button type="button" name="previous" class="previous action-button-previous">Previous</button>
+                          <button type="submit"  class="submit action-button">Agree & Submit</button>
                       </fieldset>
                   </form>
                  
@@ -379,11 +379,13 @@
     <!-- Plugin js for this page -->
     <script src="../assets/vendors/chart.js/Chart.min.js"></script>
     <script src="../assets/vendors/jquery-circle-progress/js/circle-progress.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- End plugin js for this page -->
     <!-- inject:js -->
     <script src="../assets/js/off-canvas.js"></script>
     <script src="../assets/js/hoverable-collapse.js"></script>
     <script src="../assets/js/misc.js"></script>
+    <script src="../assets/js/value.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="../assets/js/dashboard.js"></script>
@@ -393,8 +395,28 @@
     <!-- End custom js for this page -->
 
     <script>
-        // Get references to the form and its required fields
-        let file = "";
+
+      document.addEventListener("DOMContentLoaded", function() {
+           const token = dencryptAFunction(); // Replace with your actual Bearer token
+
+           fetch("https://payments.mosesjasi.biz/paymendapi/merchant/merchant_details", {
+               headers: {
+                   "Authorization": `Bearer ${token}`
+               }
+           })
+               .then(response => response.json())
+               .then(data => {
+                   const merchantDetails = data; // Assuming the response contains the merchant details object
+                   const merchantNameElement = document.querySelector(".mb-1.text-black");
+                   merchantNameElement.textContent = merchantDetails.merchant_name;
+               })
+               .catch(error => {
+                   console.log("Error:", error);
+               });
+       });
+
+      // Get references to the form and its required fields
+      let file = "";
 
       const fileInput = document.getElementById('file-input');
       const fileList = document.getElementById('file-list');
@@ -423,6 +445,7 @@
         fileLink.href = fileURL;
         fileLink.textContent = fileName;
         fileLink.className = 'file-link';
+
         listItem.appendChild(fileIcon);
         listItem.appendChild(document.createTextNode(' '));
         listItem.appendChild(fileLink);
@@ -440,7 +463,121 @@
         }
       }
 
+      const formKYC  = document.querySelector('.add_kyc_form')
 
+      
+
+      formKYC.addEventListener('submit', event =>{
+      event.preventDefault(); // Prevent default form submission
+
+
+      
+        // Get all anchor tags with a specific class
+        const anchorTags = document.querySelectorAll('a.file-link');
+
+        // Function to check if a URL points to an image file
+        function isImage(url) {
+          const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+          const extension = url.substring(url.lastIndexOf('.')).toLowerCase();
+          return imageExtensions.includes(extension);
+        }
+
+        // Function to convert file URL to base64
+        function convertToBase64(url) {
+          return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.responseType = 'blob';
+
+            xhr.onload = () => {
+              if (xhr.status === 200) {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                  resolve(reader.result);
+                };
+                reader.onerror = reject;
+                reader.readAsDataURL(xhr.response);
+              } else {
+                reject(new Error('Failed to load file'));
+              }
+            };
+
+            xhr.onerror = () => {
+              reject(new Error('Failed to load file'));
+            };
+
+            xhr.send();
+          });
+        }
+
+        // Function to post JSON data using Fetch API
+        function postData(url, data) {
+          return fetch(url, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(data)
+          });
+        }
+
+        // Create an array to store the converted file data
+        const fileDataArray = [];
+
+        // Loop through the anchor tags and convert files to base64
+        for (const anchorTag of anchorTags) {
+          const fileUrl = anchorTag.href;
+
+          let fileData = [];
+
+          convertToBase64(fileUrl)
+            .then(base64Data => {
+              if (isImage(fileUrl)) {
+                // Handle the base64 image data
+                 fileData = {
+                  url: fileUrl,
+                  base64: base64Data
+                };
+              } else {
+                // Handle the base64 PDF data
+                 fileData = {
+                  url: fileUrl,
+                  base64: base64Data
+                };
+              }
+
+              fileDataArray.push(fileData);
+              if (fileDataArray.length === anchorTags.length) {
+
+                const jsonData = {
+                    platform:'web',
+                    firstname: document.getElementById('fname').value,
+                    lastname: document.getElementById('lname').value,
+                    mobile: document.getElementById('phone').value,
+                    idfront: fileDataArray[2].base64.replace(/^data:image\/[a-z]+;base64,/, ""),
+                    idback: fileDataArray[1].base64.replace(/^data:image\/[a-z]+;base64,/, ""),
+                    businessdoc: fileDataArray[0].base64.replace(/^data:application\/[a-z]+;base64,/, "")
+                  };
+
+               // Perform the POST request with the JSON data
+                const apiUrl = 'http://127.0.0.1:5000/kyc/upload';
+                postData(apiUrl, jsonData)
+                  .then(response => {
+                    console.log('Data posted successfully');
+                  })
+                  .catch(error => {
+                    console.error('Error:', error);
+                  });
+              }
+            }).catch(error => {
+              console.error(error);
+            });
+          }
+         
+      
+    });
+    
     </script>
   </body>
 </html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paymend | Transactions</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="../assets/vendors/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/multistep.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.2/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="../assets/images/favicon.png" />
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo" href="index.html"><img src="../assets/images/logo.png" alt="logo" /></a>
+          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../assets/images/logo-mini.svg" alt="logo" /></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-menu"></span>
+          </button>
+          <div class="search-field d-none d-xl-block">
+            
+          </div>
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-profile dropdown">
+              <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                <div class="nav-profile-img">
+                  <img src="../assets/images/faces/profile-small.png" alt="image">
+                </div>
+                <div class="nav-profile-text">
+                  <p class="mb-1 text-black">John Doe</p>
+                </div>
+              </a>
+              <div class="dropdown-menu navbar-dropdown dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="profileDropdown" data-x-placement="bottom-end">
+                <div class="p-3 text-center bg-primary">
+                  <img class="img-avatar img-avatar48 img-avatar-thumb" src="../assets/images/faces/profile-small.png" alt="">
+                </div>
+                <div class="p-2">
+                  <h5 class="dropdown-header text-uppercase pl-2 text-dark">User Options</h5>
+                  <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
+                    <span>Inbox</span>
+                    <span class="p-0">
+                      <span class="badge badge-primary">3</span>
+                      <i class="mdi mdi-email-open-outline ml-1"></i>
+                    </span>
+                  </a>
+                  <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
+                    <span>Profile</span>
+                    <span class="p-0">
+                      <span class="badge badge-success">1</span>
+                      <i class="mdi mdi-account-outline ml-1"></i>
+                    </span>
+                  </a>
+                  <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                    <span>Settings</span>
+                    <i class="mdi mdi-settings"></i>
+                  </a>
+                  <div role="separator" class="dropdown-divider"></div>
+                  <h5 class="dropdown-header text-uppercase  pl-2 text-dark mt-2">Actions</h5>
+                  <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
+                    <span>Lock Account</span>
+                    <i class="mdi mdi-lock ml-1"></i>
+                  </a>
+                  <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
+                    <span>Log Out</span>
+                    <i class="mdi mdi-logout ml-1"></i>
+                  </a>
+                </div>
+              </div>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                <i class="mdi mdi-bell-outline"></i>
+                <span class="count-symbol bg-danger"></span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                <h6 class="p-3 mb-0 bg-primary text-white py-4">Notifications</h6>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-success">
+                      <i class="mdi mdi-calendar"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="preview-subject font-weight-normal mb-1">Event today</h6>
+                    <p class="text-gray ellipsis mb-0"> Just a reminder that you have an event today </p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-warning">
+                      <i class="mdi mdi-settings"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="preview-subject font-weight-normal mb-1">Settings</h6>
+                    <p class="text-gray ellipsis mb-0"> Update dashboard </p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-info">
+                      <i class="mdi mdi-link-variant"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="preview-subject font-weight-normal mb-1">Launch Admin</h6>
+                    <p class="text-gray ellipsis mb-0"> New admin wow! </p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <h6 class="p-3 mb-0 text-center">See all notifications</h6>
+              </div>
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item nav-category">&nbsp;</li>
+          
+            
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html">
+                <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
+                <span class="menu-title">Dashboard</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="kyc.html">
+                <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
+                <span class="menu-title">KYC</span>
+              </a>
+            </li>
+           
+            <li class="nav-item">
+              <a class="nav-link" href="transactions.html">
+                <span class="icon-bg"><i class="mdi mdi-cash-multiple menu-icon"></i></span>
+                <span class="menu-title">Transactions</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="settlements.html">
+                <span class="icon-bg"><i class="mdi mdi-send menu-icon"></i></span>
+                <span class="menu-title">Settlements</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="disbursements.html">
+                <span class="icon-bg"><i class="mdi mdi-contactless-payment menu-icon"></i></span>
+                <span class="menu-title">Disbursements</span>
+              </a>
+            </li>
+          
+            
+            <li class="nav-item sidebar-user-actions">
+              <div class="sidebar-user-menu">
+                <a href="#" class="nav-link"><i class="mdi mdi-settings menu-icon"></i>
+                  <span class="menu-title">Settings</span>
+                </a>
+              </div>
+            </li>
+            
+            <li class="nav-item sidebar-user-actions">
+              <div class="sidebar-user-menu">
+                <a href="#" class="nav-link"><i class="mdi mdi-logout menu-icon"></i>
+                  <span class="menu-title">Log Out</span></a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="d-sm-flex justify-content-between align-items-center transaparent-tab-border {">
+                  
+                  
+                </div>
+                <div class="tab-content tab-transparent-content">
+                  <div class="tab-pane fade show active" id="business-1" role="tabpanel" aria-labelledby="business-tab">
+                    <div class="row">
+                      <div class="col-xl-4 col-lg-6 col-sm-6 grid-margin stretch-card">
+                        <div class="card">
+                          <div class="card-body text-center">
+                            <h5 class="mb-2 text-dark font-weight-normal">Successful Transactions</h5>
+                           
+                            <h3 class="mb-0 font-weight-bold mt-2 text-dark">0</h3>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-xl-4 col-lg-6 col-sm-6 grid-margin stretch-card">
+                        <div class="card">
+                          <div class="card-body text-center">
+                            <h5 class="mb-2 text-dark font-weight-normal">Pending Transactions</h5>
+                            
+                            <h3 class="mb-0 font-weight-bold mt-2 text-dark">0</h3>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-xl-4 col-lg-6 col-sm-6 grid-margin stretch-card">
+                        <div class="card">
+                          <div class="card-body text-center">
+                            <h5 class="mb-2 text-dark font-weight-normal">Failed Transactions</h5>
+                            
+                            <h3 class="mb-0 font-weight-bold mt-2 text-dark">0</h3>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    
+                    </div>
+                    <div class="row">
+                      <div class="col-12 grid-margin">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-sm-12">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                  <h4 class="card-title mb-0">Recent Transactions</h4>
+                                  <div class="dropdown dropdown-arrow-none">
+                                    <button class="btn p-0 text-dark dropdown-toggle" type="button" id="dropdownMenuIconButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <i class="mdi mdi-dots-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuIconButton1">
+                                      <h6 class="dropdown-header">Settings</h6>
+                                      <a class="dropdown-item" href="#">Action</a>
+                                      <a class="dropdown-item" href="#">Another action</a>
+                                      <a class="dropdown-item" href="#">Something else here</a>
+                                      <div class="dropdown-divider"></div>
+                                      <a class="dropdown-item" href="#">Separated link</a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                                <div class="col-lg-12 grid-margin stretch-card">
+                                  <div class="card">
+                                      
+                                      <table class="table table-bordered" id="transactionTable">
+                                        <thead>
+                                          <tr>
+                                            <th> # </th>
+                                            <th> Transaction Id </th>
+                                            <th> Merchant Id </th>
+                                            <th> Merchant Till </th>
+                                            <th> Customer </th>
+                                            <th> Status </th>
+                                            <th> Amount </th>
+                                            <th> Transaction Ref </th>
+                                            <th> Date </th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+ 
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+
+
+                             
+                             
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="footer-inner-wraper">
+              <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © paymend.co.zm 2023</span>
+              </div>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="../assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="../assets/vendors/jquery-circle-progress/js/circle-progress.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../assets/js/off-canvas.js"></script>
+    <script src="../assets/js/hoverable-collapse.js"></script>
+    <script src="../assets/js/misc.js"></script>
+    <script src="../assets/js/value.js"></script>
+
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="../assets/js/dashboard.js"></script>
+    <script src="assets/js/multistep.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <!-- End custom js for this page -->
+
+
+
+    <script>
+
+      // Call the function on document load
+      document.addEventListener('DOMContentLoaded', checkAccessToken);
+      document.addEventListener("DOMContentLoaded", function() {
+            const token = dencryptAFunction(); // Replace with your actual Bearer token
+
+            fetch("https://payments.mosesjasi.biz/paymendapi/merchant/merchant_details", {
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const merchantDetails = data; // Assuming the response contains the merchant details object
+                    const merchantNameElement = document.querySelector(".mb-1.text-black");
+                    merchantNameElement.textContent = merchantDetails.merchant_name;
+                })
+                .catch(error => {
+                    console.log("Error:", error);
+                });
+
+
+            fetch("https://payments.mosesjasi.biz/paymendapi/transaction/merchant_transaction_history", {
+              method: 'POST',
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                  const transactions = data.transactions;
+                  const table = document.getElementById('transactionTable');
+
+                  // Clear existing table data
+                  table.innerHTML = '';
+
+                  // Create table header row
+                  var headerRow = table.insertRow();
+                  var numberHeader = headerRow.insertCell();
+                  numberHeader.textContent = '#';
+                  var transactionIdHeader = headerRow.insertCell();
+                  transactionIdHeader.textContent = 'Transaction ID';
+                  var merchantIdHeader = headerRow.insertCell();
+                  merchantIdHeader.textContent = 'Merchant ID';
+                  var merchantTillHeader = headerRow.insertCell();
+                  merchantTillHeader.textContent = 'Merchant Till';
+                  var customerIdHeader = headerRow.insertCell();
+                  customerIdHeader.textContent = 'Customer ID';
+                  var statusHeader = headerRow.insertCell();
+                  statusHeader.textContent = 'Status';
+                  var amountHeader = headerRow.insertCell();
+                  amountHeader.textContent = 'Amount';
+                  var referenceHeader = headerRow.insertCell();
+                  referenceHeader.textContent = 'Reference';
+                  var dateHeader = headerRow.insertCell();
+                  dateHeader.textContent = 'Date';
+
+                  // Iterate over each transaction and add a row to the table
+                  transactions.forEach((transaction, index) => {
+                    var row = table.insertRow();
+
+                    // Add number field to the row
+                    var numberCell = row.insertCell();
+                    numberCell.textContent = index + 1;
+
+                    // Add transaction details to cells in the row
+                    var transactionIdCell = row.insertCell();
+                    transactionIdCell.textContent = transaction.transaction_id;
+
+                    var merchantIdCell = row.insertCell();
+                    merchantIdCell.textContent = transaction.merchant_id;
+
+                    var merchantTillCell = row.insertCell();
+                    merchantTillCell.textContent = transaction.merchant_till;
+
+                    var customerIdCell = row.insertCell();
+                    customerIdCell.textContent = transaction.customer_id;
+
+                    var statusCell = row.insertCell();
+                    statusCell.textContent = transaction.status;
+
+                    var amountCell = row.insertCell();
+                    amountCell.textContent = transaction.transaction_amount;
+
+                    var referenceCell = row.insertCell();
+                    referenceCell.textContent = transaction.transaction_referrence;
+
+                    var dateCell = row.insertCell();
+                    var transactionDate = new Date(transaction.transaction_date);
+                    dateCell.textContent = transactionDate.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: '2-digit' });
+                  });
+                })
+                .catch(error => {
+                  console.log("Error:", error);
+                });
+        });
+    
+    </script>
+  </body>
+</html>

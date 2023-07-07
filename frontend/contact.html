@@ -2,288 +2,205 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Swish | Anywhere, Anytime</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <!-- Favicons -->
-    <link href="img/favicon.png" rel="icon">
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-
-    <!-- Bootstrap CSS File -->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Libraries CSS Files -->
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-    <!-- Main Stylesheet File -->
-    <link href="css/style.css" rel="stylesheet">
-
-    <script src="lib/jquery/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FOI App Landing Page</title>
+    <link rel="stylesheet" href="assets/vendors/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-
-    <!--==========================
-  Header
-  ============================-->
-    <header id="header" class="fixed-top">
+    <header class="foi-header">
         <div class="container">
-
-            <div class="logo float-left">
-
-                <a href="index.html" class="scrollto"><img src="img/SwishLogoScreen.png" alt="" class="img-fluid"></a>
-            </div>
-
-            <nav class="main-nav float-right d-none d-lg-block">
-                <ul>
-                    <li><a href="merchants.html">Merchant</a></li>
-                    <li><a href="consumer.html">Customer</a></li>
-                    <li><a href="about.html">About</a></li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                             Offers and Rewards
-                        </a>
-                        <div class=" dropdown-content">
-                            <a class="dropdown-item" href="offers.html">Offers</a>
-                            <a class="dropdown-item" href="promotions.html">Rewards</a>
-                        </div>
-                    </li>
-
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="signup.html" style="text-decoration:none; color: white; width: 150px;" class="css-button-rounded">Sign Up</a></li>
-                </ul>
+            <nav class="navbar navbar-expand-lg navbar-light foi-navbar">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logo.svg" alt="FOI">
+                </a>
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="features.html">Features</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                            <div class="dropdown-menu" aria-labelledby="pagesMenu">
+                                <a class="dropdown-item" href="blog.html">Blog</a>
+                                <a class="dropdown-item" href="login.html">Login</a>
+                                <a class="dropdown-item" href="register.html">Register</a>
+                                <a class="dropdown-item" href="faq.html">FAQ</a>
+                                <a class="dropdown-item" href="404.html">404</a>
+                                <a class="dropdown-item" href="careers.html">Careers</a>
+                                <a class="dropdown-item" href="blog-single.html">Single blog</a>
+                                <a class="dropdown-item" href="privacy-policy.html">Privacy policy</a>
+                            </div>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="contact.html">contact <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mt-2 mt-lg-0">
+                        <li class="nav-item mr-2 mb-3 mb-lg-0">
+                            <a class="btn btn-secondary" href="register.html">Sign up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-secondary" href="login.html">Login</a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
-            <!-- .main-nav -->
         </div>
     </header>
-    <!-- #header -->
 
-    <!--==========================
-        Intro Section
-      ============================-->
-    <section id="intro" class="clearfix">
+    <main>
         <div class="container">
-
-            <div class="intro-img">
-                <img src="img/A4Sticker.png" alt="" class="img-fluid">
-            </div>
-
-            <div class="intro-info">
-                <h2>Contact Us</h2> <br>
-
-
-            </div>
-
+            <section class="page-header">
+                <h2>Tell us about yourself</h2>
+                <h5>Whether you have questions or you would just like to say hello, contact us.</h5>
+            </section>
+            <section class="contact-content">
+                <div class="contact-widget media">
+                    <img src="assets/images/icon-4.png" alt="monitor" width="50px">
+                    <div class="media-body">
+                        <h6 class="widget-title">Production Office</h6>
+                        <p class="widget-content">hello@youriste.com</p>
+                    </div>
+                </div>
+                <div class="contact-widget media">
+                    <img src="assets/images/icon-5.png" alt="book" width="40px">
+                    <div class="media-body">
+                        <h6 class="widget-title">Administration Office</h6>
+                        <p class="widget-content">hello@youriste.com</p>
+                    </div>
+                </div>
+            </section>
+            <section class="contact-form-wrapper">
+                <form action="index.html">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="name">YOUR NAME <sup>*</sup></label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name *">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="email">YOUR EMAIL ADDRESS <sup>*</sup></label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="feeney.matteo@schmeler.com">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="subject">SUBJECT <sup>*</sup></label>
+                            <input type="text" class="form-control" id="name" name="subject" placeholder="Development">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="phone">YOUR PHONE NUMBER <sup>*</sup></label>
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="635-396-9570">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-12">
+                            <label for="message">HOW CAN WE HELP YOU? <sup>*</sup></label>
+                            <textarea name="message" id="message" class="form-control" rows="7" placeholder="Hi there, I would like to ..."></textarea>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary mb-4">Submit</button>
+                        <p class="form-footer-text">We'll get back to you in 1-2 business days.</p>
+                    </div>
+                </form>
+            </section>
         </div>
-    </section>
-    <!-- #intro -->
-
-    <main id="main">
-
-        <!--==========================
-          About Us Section
-        ============================-->
-        <section id="about">
-            <div class="container">
-                <div class="section-header">
-                    <h3>Contact Us</h3>
-                </div>
-            </div>
-        </section>
-        <!-- #about -->
-
-
-        <!--==========================
-      Contact Section
-    ============================-->
-        <section id="contact">
-            <div class="container-fluid">
-
-
-
-                <div class="row wow fadeInUp">
-
-                    <div class="col-lg-6">
-                        <div class="map mb-4 mb-lg-0">
-                            <!--
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3847.1416062904314!2d28.31735461484963!3d-15.368815389316925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19408b20f98b0f4b%3A0x2c603a4819b854e8!2sNetOne+Zambia!5e0!3m2!1sen!2szm!4v1563373051787!5m2!1sen!2szm" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-						-->
-
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3847.1416062904314!2d28.31735461484963!3d-15.368815389316925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19408b20f98b0f4b%3A0x2c603a4819b854e8!2sNetOne+Zambia!5e0!3m2!1sen!2szm!4v1563373051787!5m2!1sen!2szm"
-                                frameborder="0" style="border:0; width: 100%; height: 312px;" allowfullscreen></iframe>
-
-
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="row">
-                            <div class="col-md-4 info">
-                                <i class="ion-ios-location-outline"></i>
-                                <p>12553 Zambezi Road Roma, Lusaka Zambia</p>
-                            </div>
-                            <div class="col-md-4 info">
-                                <i class="ion-ios-email-outline"></i>
-                                <p>contactus@swish.co.zm</p>
-                            </div>
-                            <div class="col-md-4 info">
-                                <i class="ion-ios-telephone-outline"></i>
-                                <p> 767</p>
-                            </div>
-                        </div>
-
-                        <div class="form">
-                            <div id="sendmessage">Your message has been sent. Thank you!</div>
-                            <div id="errormessage">An Error happened Please Try again later</div>
-
-                            <form action="" class="contactForm" id="form1">
-                                <div class="form-row">
-                                    <div class="form-group col-lg-6">
-                                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                                        <div class="validation"></div>
-                                    </div>
-                                    <div class="form-group col-lg-6">
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                                        <div class="validation"></div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:2" data-msg="Please enter at least 2 chars of subject" />
-                                    <div class="validation"></div>
-                                </div>
-                                <div class="form-group">
-                                    <textarea class="form-control" id="message" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                                    <div class="validation"></div>
-                                </div>
-                                <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
-                            </form>
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-        <!-- #contact -->
-
     </main>
 
-    <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>MERCHANTS</h4>
-                        <ul>
-                            <li><a href="merchants.html">Registration</li>
-                                <li><a href="#">Merchant Portal</a></li>
-
-                            <li><a href="#">Recieve Payments</a></li>
-                            <li><a href="merchants.html">Help</a></li>
+    <footer class="foi-footer text-white">
+        <div class="container">
+            <div class="row footer-content">
+                <div class="col-xl-6 col-lg-7 col-md-8">
+                    <h2 class="mb-0">Do you want to know more or just have a question? write to us.</h2>
+                </div>
+                <div class="col-md-4 col-lg-5 col-xl-6 py-3 py-md-0 d-md-flex align-items-center justify-content-end">
+                    <a href="contact.html" class="btn btn-danger btn-lg">Contact form</a>
+                </div>
+            </div>
+            <div class="row footer-widget-area">
+                <div class="col-md-3">
+                    <div class="py-3">
+                        <img src="assets/images/logo-white.svg" alt="FOI">
+                    </div>
+                    <p class="font-os font-weight-semibold mb3">Get our mobile app</p>
+                    <div>
+                        <button class="btn btn-app-download mr-2"><img src="assets/images/ios.svg" alt="App store"></button>
+                        <button class="btn btn-app-download"><img src="assets/images/android.svg" alt="play store"></button>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3 mt-md-0">
+                    <nav>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a href="#!" class="nav-link">Account</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#!" class="nav-link">My tasks</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#!" class="nav-link">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#!" class="nav-link">Edit profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#!" class="nav-link">Activity</a>
+                            </li>
                         </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>CUSTOMERS</h4>
-                        <ul>
-                            <li><a href="consumer.html">Make Payments</li>
-                              
-                                <li><a href="consumer.html">Help</a></li>
+                    </nav>
+                </div>
+                <div class="col-md-3 mt-3 mt-md-0">
+                    <nav>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a href="#!" class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#!" class="nav-link">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#!" class="nav-link">Careers <span class="badge badge-pill badge-secondary ml-3">Hiring</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#!" class="nav-link">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#!" class="nav-link">Shop with us</a>
+                            </li>
                         </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h4>Contact Us</h4>
-                        <p>
-                            12553 Zambezi Road<br>Roma, Lusaka Zambia <br>
-                            <strong>Phone :</strong> 767<br>
-
-                            <strong>Email :</strong> contactus@swish.co.zm<br>
-                        </p>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h4>Social Networks</h4>
-                        <div class="social-links">
-                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-                        </div>
-
-                    </div>
-
-
-
+                    </nav>
+                </div>
+                <div class="col-md-3 mt-3 mt-md-0">
+                    <p>
+                        &copy; foi. 2020 <a href="https://www.bootstrapdash.com" target="_blank" rel="noopener noreferrer" class="text-reset">BootstrapDash</a>.
+                    </p>
+                    <p>All rights reserved.</p>
+                    <nav class="social-menu">
+                        <a href="#!"><img src="assets/images/facebook.svg" alt="facebook"></a>
+                        <a href="#!"><img src="assets/images/instagram.svg" alt="instagram"></a>
+                        <a href="#!"><img src="assets/images/twitter.svg" alt="twitter"></a>
+                        <a href="#!"><img src="assets/images/youtube.svg" alt="youtube"></a>
+                    </nav>
                 </div>
             </div>
         </div>
-
-        <div class="container">
-            <div class="copyright">
-                &copy; Copyright 2019 NetOne Payment Systems Ltd – All Rights Reserved
-            </div>
-
-        </div>
     </footer>
-    <!-- #footer -->
-
-    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-    <!-- Uncomment below i you want to use a preloader -->
-    <!-- <div id="preloader"></div> -->
-
-    <!-- JavaScript Libraries -->
-    <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/jquery/jquery-migrate.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/mobile-nav/mobile-nav.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <!-- Contact Form JavaScript File -->
-    <script src="contactform/contactform.js"></script>
-
-    <!-- Template Main Javascript File -->
-    <script src="js/main.js"></script>
-
-    <script type="text/javascript">
-        $("#form1").submit(function() {
-            var jqxhr = $.post('https://android.swish.co.zm/swish/v1/api/PostContactSend', $('#form1').serialize())
-                .success(function() {
-                    $("#sendmessage").show()
-
-                    $("#name").val('');
-                    $("#email").val('');
-                    $("#subject").val('');
-                    $("#message").val('');
-                })
-                .error(function() {
-                    $("#errormessage").show();
-                });
-            return false;
-        });
-    </script>
-
+    <script src="assets/vendors/jquery/jquery.min.js"></script>
+    <script src="assets/vendors/popper.js/popper.min.js"></script>
+    <script src="assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
